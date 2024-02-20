@@ -35,12 +35,14 @@ spec:
         prometheus.io/port: "8390"
     spec:
       containers:
-      - image: ghcr.io/chesscomputing/specscansservice:v0.0.1-dev4
+      - image: ghcr.io/chesscomputing/specscansservice:v0.0.1-dev8
         name: scans
         imagePullPolicy: Always
         env:
           - name: CHESS_FOXDEN_CONFIG
             value: /etc/secrets/.foxden.yaml
+        command:
+          - /data/srv
         resources:
           requests:
             memory: "100Mi"

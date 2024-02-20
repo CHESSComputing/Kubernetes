@@ -35,12 +35,14 @@ spec:
         prometheus.io/port: "8380"
     spec:
       containers:
-      - image: ghcr.io/chesscomputing/authz:v0.0.1-dev4
+      - image: ghcr.io/chesscomputing/authz:v0.0.1-dev8
         name: authz
         imagePullPolicy: Always
         env:
           - name: CHESS_FOXDEN_CONFIG
             value: /etc/secrets/.foxden.yaml
+        command:
+          - /data/srv
         resources:
           requests:
             memory: "100Mi"
