@@ -52,7 +52,7 @@ spec:
             cpu: "8000m"
         livenessProbe:
           httpGet:
-            path: /api
+            path: /apis
             port: 8344
             httpHeaders:
             - name: Accept
