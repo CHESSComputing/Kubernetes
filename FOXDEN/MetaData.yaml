@@ -67,7 +67,13 @@ spec:
         - name: secrets
           mountPath: /etc/secrets
           readOnly: true
+        - name: schemas
+          mountPath: /etc/schemas
+          readOnly: true
       volumes:
       - name: secrets
         secret:
           secretName: foxden-secrets
+      - name: schemas
+        secret:
+          secretName: schema-secrets
