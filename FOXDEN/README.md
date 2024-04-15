@@ -18,6 +18,10 @@ kubectl describe node docker-desktop
 # https://github.com/kubernetes/ingress-nginx
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.0/deploy/static/provider/cloud/deploy.yaml
 ```
+- the docker desktop URL and IP can be found via:
+```
+kubectl cluster-info
+```
 
 
 ### Kubernetes setup
@@ -54,6 +58,11 @@ kubectl delete deployment -n foxden metadata
 kubectl delete deployment -n foxden mlhub
 kubectl delete deployment -n foxden publish
 kubectl delete deployment -n foxden scans
+```
+
+And, now we can access our service via:
+```
+curl -v http://kubernetes.docker.internal/apis
 ```
 
 ### References
