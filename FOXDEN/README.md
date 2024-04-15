@@ -2,6 +2,23 @@
 This area contains all necessary files to manage FOXDEN on Kubernetes
 infrastructure.
 
+### Setup kubernetes cluster on macOS (M2, arm64)
+- install docker desktop
+- visit docker desktop settings and enable Kuberneres
+- install `kubectl` and configure it to use docker desktop
+```
+docker context ls
+kubectl config use-context docker-desktop
+kubectl describe node docker-desktop
+```
+- setup nginx ingress
+
+```
+# please use recent version from
+# https://github.com/kubernetes/ingress-nginx
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.0/deploy/static/provider/cloud/deploy.yaml
+```
+
 
 ### Kubernetes setup
 ```
@@ -38,3 +55,7 @@ kubectl delete deployment -n foxden mlhub
 kubectl delete deployment -n foxden publish
 kubectl delete deployment -n foxden scans
 ```
+
+### References
+- https://docs.docker.com/manuals/
+- https://kubernetes.github.io/ingress-nginx/deploy/
