@@ -25,6 +25,26 @@ kubectl cluster-info
 
 
 ### Kubernetes setup
+Please create `k8secrets` directory and store over there `dbfile`
+and Metadata schemas, e.g.
+```
+tree k8secrets
+k8secrets
+├── dbfile
+└── schemas
+    ├── ID1A3.json
+    ├── ID3A.json
+    ├── ID4B.json
+    ├── common.json
+    ├── lite.json
+    ├── mysql.sql
+    ├── sqlite.sql
+    └── test.json
+
+2 directories, 9 files
+```
+
+Next, setup your k8s cluster and populate it with the following:
 ```
 # create foxden namespace
 kubectl create ns foxden
