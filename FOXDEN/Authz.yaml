@@ -35,7 +35,7 @@ spec:
         prometheus.io/port: "8380"
     spec:
       containers:
-      - image: ghcr.io/chesscomputing/authz:v0.0.1-dev8
+      - image: ghcr.io/chesscomputing/authz:v0.0.3-test2
         name: authz
         imagePullPolicy: Always
         env:
