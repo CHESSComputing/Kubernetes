@@ -39,7 +39,7 @@ spec:
         name: metadata
         imagePullPolicy: Always
         env:
-          - name: CHESS_FOXDEN_CONFIG
+          - name: FOXDEN_CONFIG
             value: /etc/secrets/.foxden.yaml
         command:
           - /data/srv
